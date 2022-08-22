@@ -1,15 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { Button } from '@mui/material'
-import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import MyCard from '../components/MyCard'
 import { sortByDate } from '../utils'
 
 
-const Home: NextPage = ({posts}) => {
+const Home = ({posts}) => {
   return (
     <div>
       <Head>

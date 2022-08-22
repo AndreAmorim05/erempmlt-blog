@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import createEmotionCache from '../utils/createEmotionCache'
 import GlobalThemeProvider from '../theme/globalThemeProvider'
-import { SettingsProvider } from '../contexts/SettingsContext'
 
 import Header from '../components/Header'
 
@@ -23,15 +22,13 @@ export default function MyApp(props: MyAppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <SettingsProvider>
-        <GlobalThemeProvider>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline
-          to build upon. */}
-          <CssBaseline />
-          <Header />
-          <Component {...pageProps} />
-        </GlobalThemeProvider>
-      </SettingsProvider>
+      <GlobalThemeProvider>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline
+        to build upon. */}
+        <CssBaseline />
+        <Header />
+        <Component {...pageProps} />
+      </GlobalThemeProvider>
     </CacheProvider>
   )
 }
